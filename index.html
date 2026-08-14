@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KPC Group · Integrated Healthcare &amp; Education Proposal</title>
+  <link rel="icon" href="media/founder.png" />
+  <style>
+    :root {
+      --navy: #0b2a4a;
+      --navy2: #163a5c;
+      --gold: #c9a240;
+      --ink: #2d3744;
+      --muted: #6b7280;
+      --paper: #f4f6f8;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Segoe UI", Calibri, Arial, sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    header.top {
+      background: var(--navy);
+      color: var(--white);
+      padding: 18px 0 16px;
+      border-top: 3px solid var(--gold);
+    }
+    header.top nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand { letter-spacing: 0.14em; font-size: 12px; color: var(--gold); font-weight: 700; }
+    nav a { color: #d7dee6; text-decoration: none; font-size: 13px; margin-left: 18px; }
+    nav a:hover { color: var(--gold); }
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 16px;
+      border-radius: 4px;
+    }
+    .hero { background: var(--navy); color: var(--white); padding: 56px 0 72px; }
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.08;
+      margin: 12px 0 18px;
+      max-width: 16ch;
+      font-weight: 500;
+    }
+    .hero p.lead { color: #c5d0da; max-width: 58ch; font-size: 17px; line-height: 1.5; }
+    .kicker { color: var(--gold); letter-spacing: 0.16em; font-size: 11px; font-weight: 700; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .stat { background: var(--navy2); padding: 16px 18px; border-radius: 8px; }
+    .stat b { display: block; color: var(--gold); font-size: 22px; }
+    .stat span { color: #b8c4d0; font-size: 12px; }
+    section { padding: 64px 0; }
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      color: var(--navy);
+      margin: 0 0 8px;
+      font-weight: 500;
+    }
+    .rule { width: 56px; height: 3px; background: var(--gold); margin: 12px 0 28px; border: 0; }
+    .deck {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .deck figure {
+      margin: 0;
+      background: var(--white);
+      border: 1px solid #dce2e8;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .deck img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+    .deck figcaption { padding: 10px 12px; font-size: 12px; color: var(--muted); }
+    .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .pillar {
+      background: var(--white);
+      border: 1px solid #dce2e8;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .pillar img { width: 100%; height: 210px; object-fit: cover; display: block; }
+    .pillar div { padding: 16px 18px 20px; }
+    .pillar h3 { margin: 0 0 6px; color: var(--navy); font-size: 18px; }
+    .pillar p { margin: 0; color: var(--muted); font-size: 14px; }
+    .campus {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .campus img { width: 100%; border-radius: 12px; display: block; }
+    .founder {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 28px;
+    }
+    .founder img { width: 180px; height: 180px; }
+    .founder h3 { color: var(--gold); margin: 0 0 8px; font-size: 22px; }
+    video {
+      width: 100%;
+      border-radius: 12px;
+      background: #000;
+      display: block;
+    }
+    footer {
+      background: var(--navy);
+      color: #9aadb8;
+      padding: 22px 0;
+      font-size: 12px;
+    }
+    footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    @media (max-width: 800px) {
+      .stats, .pillars, .campus, .founder { grid-template-columns: 1fr; }
+      nav a { margin-left: 0; margin-right: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <nav>
+        <div class="brand">KPC GROUP</div>
+        <div>
+          <a href="#deck">Proposal</a>
+          <a href="#pillars">Four pillars</a>
+          <a href="#campus">Campus 3D</a>
+          <a href="#amader-bari">Amader Bari</a>
+          <a class="btn" href="deck/KPC_Integrated_Healthcare_Education_Proposal_WB_REVISED.pptx">Download PPTX</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">WEST BENGAL  ·  2026  ·  STAKEHOLDER PREVIEW</div>
+      <h1>Integrated Healthcare &amp; Education Ecosystem</h1>
+      <p class="lead">Four linked projects on the KPC Jadavpur campus and beyond — senior living, oncology, tertiary care, and a self-funded university — submitted for the kind consideration of the Government of West Bengal.</p>
+      <div class="stats">
+        <div class="stat"><b>₹660–870+ Cr</b><span>Indicative private capital</span></div>
+        <div class="stat"><b>₹0</b><span>State capital asked</span></div>
+        <div class="stat"><b>B+G+6</b><span>University academic block</span></div>
+        <div class="stat"><b>2,800+</b><span>Annual learner pipeline (Y5)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="founder">
+        <img src="media/founder.png" alt="Dr. Kali Pradip Chaudhuri" />
+        <div>
+          <div class="kicker">THE VISIONARY FOUNDER</div>
+          <h3>Dr. Kali Pradip Chaudhuri</h3>
+          <p>MD, FACS, FAAOS, FICS · Founder &amp; Chairman, KPC Group · Orthopaedic surgeon, entrepreneur, philanthropist. West Bengal’s first private medical college was delivered on this campus under PPP; this proposal continues that work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="deck">
+    <div class="wrap">
+      <h2>The 18-slide proposal</h2>
+      <hr class="rule" />
+      <div class="deck" id="slides"></div>
+    </div>
+  </section>
+
+  <section id="pillars">
+    <div class="wrap">
+      <h2>The four pillars</h2>
+      <hr class="rule" />
+      <div class="pillars">
+        <article class="pillar">
+          <img src="media/amader_bari.jpg" alt="Amader Bari courtyard" />
+          <div>
+            <h3>Amader Bari</h3>
+            <p>Contemporary Bengali senior living · 220–250 residents · B+G+7 · Jadavpur</p>
+          </div>
+        </article>
+        <article class="pillar">
+          <img src="media/oncology.jpg" alt="Oncology hospital isometric" />
+          <div>
+            <h3>Oncology Hospital</h3>
+            <p>270 beds · robotic surgery, plasma therapy · B+G+7 · Jadavpur</p>
+          </div>
+        </article>
+        <article class="pillar">
+          <img src="media/multi.jpg" alt="Multispeciality hospital isometric" />
+          <div>
+            <h3>Multispeciality Hospital</h3>
+            <p>490 beds · cardiac, paediatric, trauma + helipad · Kolkata</p>
+          </div>
+        </article>
+        <article class="pillar">
+          <img src="media/kpc_university.jpg" alt="KPC University academic block" />
+          <div>
+            <h3>KPC University</h3>
+            <p>Science, education &amp; research · ₹200 Cr fully self-funded · B+G+6</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="campus">
+    <div class="wrap campus">
+      <img src="media/campus_3d.jpg" alt="Refined KPC Jadavpur campus isometric" />
+      <div>
+        <h2>Refined campus 3D</h2>
+        <hr class="rule" />
+        <p>Photoreal isometric of the existing KPC Medical College campus in Jadavpur — the reference that now sits on the university slide, replacing the black-and-white site plan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="amader-bari">
+    <div class="wrap">
+      <h2>Amader Bari · motion reel</h2>
+      <hr class="rule" />
+      <p style="color:var(--muted);max-width:62ch;margin-top:0">Compressed web cut of the senior-living campus film (27s). Play it here; the original high-bitrate master stays in the project archive.</p>
+      <video controls playsinline poster="media/amader_bari.jpg" src="media/amader_bari_reel.mp4"></video>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>KPC Group · Kali Pradip Chaudhuri Foundation · Jadavpur, Kolkata 700032</div>
+      <div>Confidential stakeholder preview · Dialmate AI / VJN001</div>
+    </div>
+  </footer>
+
+  <script>
+    const titles = [
+      "Cover",
+      "The Visionary Founder",
+      "A Global Journey of Impact",
+      "KPC Medical College & Hospital",
+      "Development Legacy in West Bengal",
+      "A Unified Vision for West Bengal",
+      "The Four Pillars",
+      "Amader Bari",
+      "Oncology Hospital",
+      "Multispeciality Hospital",
+      "KPC University",
+      "Combined Investment Snapshot",
+      "Manpower & Employment",
+      "Benefits to Government of WB",
+      "Growth for Society",
+      "Synergies Across the Ecosystem",
+      "Request for Government Support",
+      "Close"
+    ];
+    const root = document.getElementById("slides");
+    titles.forEach((t, i) => {
+      const n = i + 1;
+      const fig = document.createElement("figure");
+      fig.innerHTML = `<a href="slides/Slide${n}.JPG"><img src="slides/Slide${n}.JPG" alt="Slide ${n}"></a><figcaption>${n} / 18 · ${t}</figcaption>`;
+      root.appendChild(fig);
+    });
+  </script>
+</body>
+</html>
